@@ -11,7 +11,7 @@
 
   <form>
     <label>Insira abaixo o texto</label>
-    <input name="texto" type="text">
+    <input name="texto" type="text" id="input-texto">
 
     <select id="escolha" onChange="criaInput()">
       <option name="opcao">Base64</option>
@@ -28,7 +28,7 @@
       <label for="decod">Decodificar</label>
     </div>
 
-    <button id="botao">Teste</button>
+    <button id="botao" onclick="executar()">Teste</button>
   </form>
   
   
