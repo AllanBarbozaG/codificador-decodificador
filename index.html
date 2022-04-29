@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <form>
+    <label>Insira abaixo o texto</label>
+    <input name="texto" type="text">
+
+    <select id="escolha" onChange="criaInput()">
+      <option name="opcao">Base64</option>
+      <option name="opcao">Cifra de César</option>
+    </select>
+    
+    <div id="incremento-div" style="display: none"></div>
+
+    <div >
+      <input id="cod" type="radio" name="radio-btn" onclick="alteraMsg()">
+      <label for="cod">Codificar</label>
+      <br>
+      <input id="decod" type="radio" name="radio-btn" onclick="alteraMsg()">
+      <label for="decod">Decodificar</label>
+    </div>
+
+    <button id="botao">Teste</button>
+  </form>
+  
+  
+
+
+
+
+  <script src="index.js"></script>
+</body>
+</html>
