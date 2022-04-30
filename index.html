@@ -9,33 +9,71 @@
 </head>
 <body>
 
-  <form>
-    <label>Insira abaixo o texto</label>
-    <input name="texto" type="text" id="input-texto">
+  <form id="formulario">
 
-    <select id="escolha" onChange="criaInput()">
-      <option name="opcao">Base64</option>
-      <option name="opcao">Cifra de César</option>
-    </select>
-    
-    <div id="incremento-div" style="display: none"></div>
+    <div id="texto-codigo-div">
 
-    <div >
-      <input id="cod" type="radio" name="radio-btn" onclick="alteraMsg()">
-      <label for="cod">Codificar</label>
-      <br>
-      <input id="decod" type="radio" name="radio-btn" onclick="alteraMsg()">
-      <label for="decod">Decodificar</label>
+      <label id="texto-codigo-label">Insira abaixo o texto</label>
+
+      <input name="texto" type="text" id="texto-codigo-input">
+
     </div>
 
-    <button id="botao" onclick="executar()">Teste</button>
+    <div id="miolo-div">
+      
+      <div id="escolha-div">
+
+        <label for="escolha-label">Escolha a base a ser utilizada</label>
+
+        <select id="escolha" onChange="criaInput()">
+
+          <option name="opcao">Base64</option>
+
+          <option name="opcao">Cifra de César</option>
+
+        </select>
+
+      </div>
+      
+      <div id="incremento-div" style="display: none"></div>
+
+      <div id="radio-btns-div">
+
+        <input id="cod" type="radio" name="radio-btn" onclick="alteraMsg()">
+
+        <label for="cod">Codificar</label>
+        <br>
+        <input id="decod" type="radio" name="radio-btn" onclick="alteraMsg()">
+
+        <label for="decod">Decodificar</label>
+
+      </div>
+
+      <button id="botao" onclick="executar()">Executar</button>
+
+    </div>
+
+    <div id="div-resultado">
+
+      <label for="input-resultado">Resultado</label>
+
+      <input id="input-resultado"></p>
+
+    </div>
+
   </form>
   
   
 
 
 
-
+  
   <script src="index.js"></script>
 </body>
 </html>
+
+
+
+
+
+
