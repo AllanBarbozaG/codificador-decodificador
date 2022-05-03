@@ -1,4 +1,3 @@
-
 function guardaVariaveis () {
   selecao = document.getElementById("escolha"); // Seleciona a tag select
   escolha = selecao.options[selecao.selectedIndex]; // verifica qual das opções foi selecionada no select
@@ -6,8 +5,10 @@ function guardaVariaveis () {
   radioBtn1 = document.getElementById("cod"); // Seleciona o radio btn de decodificar
   radioBtn2 = document.getElementById("decod"); // Seleciona o radio btn de decodificar
   botao = document.getElementById("botao"); // Seleciona o botao de executar
+  inputTexto = document.getElementById('texto-codigo-input');  
+  incremento = document.getElementById("incremento"); // Seleciona o campo de input dentro da div oculta 
+  inputResultado = document.getElementById('input-resultado');
 }
-
 // Exibe ou esconde o input de incremento da Cifra de Cesar
 function criaInput() {
   guardaVariaveis();
@@ -24,12 +25,10 @@ function criaInput() {
     incrementoDiv.style.display = 'none'; // esconhe a div oculta caso a opção base64 esteja selecionada
   }
 }
-
 // Altera a mensagem do botão dependendo do que foi selecionado nos radio buttons
 function alteraMsg() {
   guardaVariaveis();
   
-
   radioBtn1.addEventListener('click', function() {
     botao.innerText = "Codificar Mensagem!";
   });
@@ -44,31 +43,32 @@ botao.addEventListener('click', function(event) {
 });
 
 function cifraDeCesar() { 
-  inputTexto = document.getElementById('texto-codigo-input');     
-  textoParaArray = Array.from(inputTexto.value.toUpperCase()); // Transforma o conteúdo da variável em um array
-  incremento = document.getElementById("incremento"); // Seleciona o campo de input dentro da div oculta 
+  textoParaArray = Array.from(inputTexto.value.toUpperCase()); // Transforma o conteúdo da variável em um array 
   valorIncremento = parseFloat(incremento.value); // Transforma o número digitado em um variável number, pois é recebido primeiramente como string
+  
   if (escolha.text == "Cifra de César" && botao.innerText == 'Codificar Mensagem!') {
 
+    inputResultado.value = '';
+    
     var i = 0;
     while (i < textoParaArray.length) { 
                     
-      var conversao = ((textoParaArray[i].charCodeAt() - 65 + valorIncremento) % 26) + 65;    
-      
-      var inputResultado = document.getElementById('input-resultado');
-      inputResultado.value = inputResultado.value + String.fromCharCode(conversao);
+      var codCifra = ((textoParaArray[i].charCodeAt() - 65 + valorIncremento) % 26) + 65;    
+            
+      inputResultado.value = inputResultado.value + String.fromCharCode(codCifra);
 
       i++;
     } 
   } else if (escolha.text == "Cifra de César" && botao.innerText == 'Decodificar Mensagem!') {
 
+    inputResultado.value = '';
+
     var i = 0;
     while (i < textoParaArray.length) {
 
-      var conversaoDois = ((textoParaArray[i].charCodeAt() - 90 - valorIncremento) % 26 ) + 90;
-
-      var inputResultadoDois = document.getElementById('input-resultado');
-      inputResultadoDois.value = inputResultadoDois.value + String.fromCharCode(conversaoDois);
+      var decodCifra = ((textoParaArray[i].charCodeAt() - 90 - valorIncremento) % 26 ) + 90;
+      
+      inputResultado.value = inputResultado.value + String.fromCharCode(decodCifra);
 
       i++;
     }
@@ -78,24 +78,37 @@ function cifraDeCesar() {
   console.log(inputTexto.value) // Exibe o conteúdo do elemento selecionado pela variável
   console.log(textoParaArray) // Exibe o conteúdo da variável
   console.log(textoParaArray.length)
-  console.log(conversao);
-  console.log(String.fromCharCode(conversao));
-  console.log(conversaoDois);
-  console.log(String.fromCharCode(conversaoDois));
+  console.log(codCifra);
+  console.log(String.fromCharCode(codCifra));
+  console.log(decodCifra);
+  console.log(String.fromCharCode(decodCifra));
   console.log('-------FIM Teste de variável-------')    
 }
 
 function base64() {
-  selecao = document.getElementById("escolha"); // acessa a tag select escolha
-  escolha = selecao.options[selecao.selectedIndex];
+  
+  if (escolha.text == 'Base64' && botao.innerText == 'Codificar Mensagem!') {
 
+    var codBase64 = btoa(inputTexto.value);    
+    
+    inputResultado.value = codBase64;
 
+  } else {
 
+    var decodBase64 = atob(inputTexto.value);
+
+    inputResultado.value = decodBase64;
+
+  }
 }
 
-// Função que será executada ao clicar no botão. Selecionada uma das duas opções, apenas a função correspondente terá efeito
+// Função que será executada ao clicar no botão executar. Selecionada uma das duas opções, apenas a função interna correspondente terá efeito
 function executar() {
-  cifraDeCesar();
+  if (escolha.text == 'Cifra de César') {
+    cifraDeCesar();
+  } else {
+    base64();
+  }
 }
 
 
