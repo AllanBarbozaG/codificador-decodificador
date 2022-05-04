@@ -1,14 +1,16 @@
 function guardaVariaveis () {
-  selecao = document.getElementById("escolha"); // Seleciona a tag select
+  selecao = document.getElementById("escolha-select"); // Seleciona a tag select
   escolha = selecao.options[selecao.selectedIndex]; // verifica qual das opções foi selecionada no select
   incrementoDiv = document.getElementById("incremento-div"); // Seleciona a div oculta
   radioBtn1 = document.getElementById("cod"); // Seleciona o radio btn de decodificar
   radioBtn2 = document.getElementById("decod"); // Seleciona o radio btn de decodificar
-  botao = document.getElementById("botao"); // Seleciona o botao de executar
-  inputTexto = document.getElementById('texto-codigo-input');  
+  botao = document.getElementById("botao-executar"); // Seleciona o botao de executar
+  inputTexto = document.getElementById('inserir-texto-textarea');  
   incremento = document.getElementById("incremento"); // Seleciona o campo de input dentro da div oculta 
-  inputResultado = document.getElementById('input-resultado');
+  inputResultado = document.getElementById('resultado-textarea');
+  
 }
+
 // Exibe ou esconde o input de incremento da Cifra de Cesar
 function criaInput() {
   guardaVariaveis();
@@ -17,7 +19,7 @@ function criaInput() {
     incrementoDiv.style.display = 'block';
     
     incrementoDiv.innerHTML = `
-    <label for="incremento">Informe o incremento</label> 
+    <label for="incremento" id="incremento-label-estilo" >Informe o incremento</label> 
     <br>
     <input id="incremento" type="number">
     `; // Define o html de dentro da div oculta quando ela aparecer
@@ -25,6 +27,7 @@ function criaInput() {
     incrementoDiv.style.display = 'none'; // esconhe a div oculta caso a opção base64 esteja selecionada
   }
 }
+
 // Altera a mensagem do botão dependendo do que foi selecionado nos radio buttons
 function alteraMsg() {
   guardaVariaveis();
@@ -54,7 +57,11 @@ function cifraDeCesar() {
     while (i < textoParaArray.length) { 
                     
       var codCifra = ((textoParaArray[i].charCodeAt() - 65 + valorIncremento) % 26) + 65;    
-            
+      
+      if (textoParaArray[i].charCodeAt() == 32) {
+        codCifra = 32;
+      }
+      
       inputResultado.value = inputResultado.value + String.fromCharCode(codCifra);
 
       i++;
@@ -67,6 +74,10 @@ function cifraDeCesar() {
     while (i < textoParaArray.length) {
 
       var decodCifra = ((textoParaArray[i].charCodeAt() - 90 - valorIncremento) % 26 ) + 90;
+
+      if (textoParaArray[i].charCodeAt() == 32) {
+        decodCifra = 32;
+      }
       
       inputResultado.value = inputResultado.value + String.fromCharCode(decodCifra);
 

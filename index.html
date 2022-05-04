@@ -17,19 +17,19 @@
 
       <form id="formulario">
 
-        <div id="texto-codigo-div">
+        <div id="inserir-texto-div">
 
-          <label id="texto-codigo-label">Insira abaixo o texto</label>
+          <label id="inserir-texto-label">Insira abaixo o texto</label>
 
-          <input name="texto" type="text" id="texto-codigo-input" class="input-estilo">
+          <textarea name="texto" type="text" id="inserir-texto-textarea" class="textarea-estilo"></textarea>
 
         </div>
 
         <div id="escolha-div" >
 
-          <label for="escolha-label">Escolha a base a ser utilizada</label>
+          <label for="escolha-select" id="escolha-label-estilo">Escolha a base a ser utilizada</label>
 
-          <select id="escolha" class="input-estilo" onChange= criaInput()>
+          <select id="escolha-select" class="select-estilo" onChange= criaInput()>
 
             <option name="opcao">Base64</option>
 
@@ -38,30 +38,43 @@
           </select>
 
         </div>
+        
+        <div id="incremento-e-radiobtns-div">
           
-          <div id="incremento-div" style="display: none">
-          
-          </div>
+          <div id="incremento-div" style="display: none"></div>
 
-          <div id="radio-btns-div">
+          <div id="radiobtns-div">
 
-            <input id="cod" type="radio" name="radio-btn" onclick="alteraMsg()">
+            <div>
 
-            <label for="cod">Codificar</label>
+              <input id="cod" class="radiobtn-estilo" type="radio" name="radio-btn" onclick="alteraMsg()">
+
+              <label for="cod" class="radiobtn-label-estilo">Codificar</label>
+
+            </div>
+
             <br>
-            <input id="decod" type="radio" name="radio-btn" onclick="alteraMsg()">
 
-            <label for="decod">Decodificar</label>
+            <div>
+
+              <input id="decod" class="radiobtn-estilo" type="radio" name="radio-btn" 
+              onclick="alteraMsg()">
+
+              <label for="decod" class="radiobtn-label-estilo">Decodificar</label>
+
+            </div>
+
+          </div>
 
         </div>
 
-        <button id="botao" onclick="executar()">Executar</button>
+        <button id="botao-executar" onclick="executar()">Executar</button>
 
-        <div id="div-resultado">
+        <div id="resultado-div">
 
-          <label for="input-resultado">Resultado</label>
+          <label for="resultado-textarea" id="resultado-label-estilo">Resultado</label>
 
-          <input id="input-resultado" class="input-estilo"></p>
+          <textarea id="resultado-textarea"class="textarea-estilo"></textarea>
 
         </div>
 
@@ -72,6 +85,7 @@
   </div>
 
   <script src="index.js"></script>
+
 </body>
 </html>
 

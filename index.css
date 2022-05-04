@@ -1,20 +1,17 @@
 body {
   height: 100vh;
   margin: 0 auto;
-  
 }
 #img-fundo {
   height: 100%;
-  background-image: url(./cyber-ge4f6532c6_1920.jpg);
+  background-image: url(https://img.freepik.com/vetores-gratis/fundo-futurista-abstrato-com-codigo-binario_193066-361.jpg?w=826);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 #sombra-imagem {
   height: 100%;
-  background-color: rgba(128, 128, 128, 0.445);
+  background-color: rgba(128, 128, 128, 0.26);
 }
-
 #img-fundo h1 {
   margin-top: 0;
   margin-bottom: 0;
@@ -23,7 +20,7 @@ body {
   color: white;
 }
 #formulario {
-  width: 100%;
+  width: 60%;
   height: 85%;
   display: flex;
   flex-direction: column;
@@ -33,66 +30,93 @@ body {
   margin-left: auto;
   margin-bottom: 2vh;
   margin-top: 2vh;
+  background-color: rgba(30, 65, 218, 0.055);
+  box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.808); 
 }
-#texto-codigo-div {
+#inserir-texto-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95%;
-  height: 15%;
+  height: 20%;
+  margin-top: 2%;
 }
-#texto-codigo-label {
+#inserir-texto-label, #escolha-label-estilo, #resultado-label-estilo  {
   width: 50%;
-  font-size: 4vh;
+  font-size: 3.5vh;
   align-self: center;
-  color: white;
-}
-#texto-codigo-input {
- 
-  
-
-}
-#miolo-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 95%;
-  height: 65%;
+  color: rgba(255, 255, 255, 0.884);
 }
 #escolha-div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 15%;
+  width: 95%;
+  height: 20%;
+  margin-top: 2%;
 }
-#escolha-label {
-  width: 50%;
-  font-size: 4vh;
+#incremento-e-radiobtns-div {
+  width: 47.5%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-#escolha {
-  width: 50.62%;
+#incremento {
+  width: 95%;
   height: 30%;
+  background-color: rgba(128, 128, 128, 0.445);
+  border-color: rgba(0, 0, 0, 0.500);
+  color: rgba(255, 255, 255, 0.486);
+  text-align: center;
 }
-
-#div-resultado {
+#incremento-label-estilo {
+  width: 50%;
+  font-size: 3vh;
+  color: rgba(255, 255, 255, 0.884);
+}
+#radiobtns-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60%;
+}
+#botao-executar {
+  width: 25%;
+  height: 5%;
+  margin-bottom: 3%;
+}
+#resultado-div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95%;
-  height: 15%;
-  
- 
+  height: 20%;
+  margin-bottom: 2%;
 }
-
-.input-estilo {
+.textarea-estilo {
   background-color: rgba(128, 128, 128, 0.445);
-  color: white;
+  border-color: rgba(0, 0, 0, 0.500);
+  width: 50%;
+  height: 60%;
+  font-size: 3vh;
+  color: rgba(255, 255, 255, 0.486);
+}
+.select-estilo {
+  background-color: rgba(128, 128, 128, 0.445);
+  color: rgba(255, 255, 255, 0.486);
   border-color: rgba(0, 0, 0, 0.500);
   width: 50%;
   height: 45%;
-
 }
+.radiobtn-label-estilo {
+  color: rgba(255, 255, 255, 0.884);
+  font-size: 2.5vh;
+}
+.radiobtn-estilo {
+  opacity: 50%;
+}
+
 
 
 
