@@ -44,7 +44,7 @@ botao.addEventListener('click', function(event) {
 
 function cifraDeCesar() { 
   textoParaArray = Array.from(inputTexto.value.toUpperCase()); // Transforma o conteúdo da variável em um array 
-  valorIncremento = parseFloat(incremento.value); // Transforma o número digitado em um variável number, pois é recebido primeiramente como string
+  valorIncremento = parseInt(incremento.value); // Transforma o número digitado em um variável number, pois é recebido primeiramente como string
   
   if (escolha.text == "Cifra de César" && botao.innerText == 'Codificar Mensagem!') {
 

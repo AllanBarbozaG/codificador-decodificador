@@ -1,20 +1,38 @@
 body {
+  height: 100vh;
   margin: 0 auto;
+  
+}
+#img-fundo {
+  height: 100%;
+  background-image: url(./cyber-ge4f6532c6_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#sombra-imagem {
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.445);
 }
 
+#img-fundo h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 2%;
+  text-align: center;
+  color: white;
+}
 #formulario {
   width: 100%;
-  height: 90vh;
+  height: 85%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
-  
- 
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 #texto-codigo-div {
   display: flex;
@@ -22,26 +40,24 @@ body {
   align-items: center;
   width: 95%;
   height: 15%;
- 
 }
 #texto-codigo-label {
   width: 50%;
   font-size: 4vh;
   align-self: center;
- 
+  color: white;
 }
 #texto-codigo-input {
-  width: 50%;
-  height: 30%;
+ 
   
+
 }
 #miolo-div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 95%;
-  height: 70%;
-    
+  height: 65%;
 }
 #escolha-div {
   display: flex;
@@ -49,7 +65,6 @@ body {
   align-items: center;
   width: 100%;
   height: 15%;
-
 }
 #escolha-label {
   width: 50%;
@@ -58,13 +73,25 @@ body {
 #escolha {
   width: 50.62%;
   height: 30%;
-
 }
 
-
 #div-resultado {
-  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  height: 15%;
+  
  
+}
+
+.input-estilo {
+  background-color: rgba(128, 128, 128, 0.445);
+  color: white;
+  border-color: rgba(0, 0, 0, 0.500);
+  width: 50%;
+  height: 45%;
+
 }
 
 

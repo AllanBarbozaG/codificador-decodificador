@@ -4,72 +4,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Conversor Cifra de César e Base64</title>
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-  <form id="formulario">
+  <div id="img-fundo">
 
-    <div id="texto-codigo-div">
+    <div id="sombra-imagem">    
+      
+      <h1><strong>Conversor de Cifra de César e Base64</strong></h1>
 
-      <label id="texto-codigo-label">Insira abaixo o texto</label>
+      <form id="formulario">
 
-      <input name="texto" type="text" id="texto-codigo-input">
+        <div id="texto-codigo-div">
+
+          <label id="texto-codigo-label">Insira abaixo o texto</label>
+
+          <input name="texto" type="text" id="texto-codigo-input" class="input-estilo">
+
+        </div>
+
+        <div id="escolha-div" >
+
+          <label for="escolha-label">Escolha a base a ser utilizada</label>
+
+          <select id="escolha" class="input-estilo" onChange= criaInput()>
+
+            <option name="opcao">Base64</option>
+
+            <option name="opcao">Cifra de César</option>
+
+          </select>
+
+        </div>
+          
+          <div id="incremento-div" style="display: none">
+          
+          </div>
+
+          <div id="radio-btns-div">
+
+            <input id="cod" type="radio" name="radio-btn" onclick="alteraMsg()">
+
+            <label for="cod">Codificar</label>
+            <br>
+            <input id="decod" type="radio" name="radio-btn" onclick="alteraMsg()">
+
+            <label for="decod">Decodificar</label>
+
+        </div>
+
+        <button id="botao" onclick="executar()">Executar</button>
+
+        <div id="div-resultado">
+
+          <label for="input-resultado">Resultado</label>
+
+          <input id="input-resultado" class="input-estilo"></p>
+
+        </div>
+
+      </form>
 
     </div>
 
-    <div id="miolo-div">
-      
-      <div id="escolha-div">
+  </div>
 
-        <label for="escolha-label">Escolha a base a ser utilizada</label>
-
-        <select id="escolha" onChange= criaInput()>
-
-          <option name="opcao">Base64</option>
-
-          <option name="opcao">Cifra de César</option>
-
-        </select>
-
-      </div>
-      
-      <div id="incremento-div" style="display: none">
-      
-      </div>
-
-      <div id="radio-btns-div">
-
-        <input id="cod" type="radio" name="radio-btn" onclick="alteraMsg()">
-
-        <label for="cod">Codificar</label>
-        <br>
-        <input id="decod" type="radio" name="radio-btn" onclick="alteraMsg()">
-
-        <label for="decod">Decodificar</label>
-
-      </div>
-
-      <button id="botao" onclick="executar()">Executar</button>
-
-    </div>
-
-    <div id="div-resultado">
-
-      <label for="input-resultado">Resultado</label>
-
-      <input id="input-resultado"></p>
-
-    </div>
-
-  </form>
-  
-  
-
-
-
-  
   <script src="index.js"></script>
 </body>
 </html>
