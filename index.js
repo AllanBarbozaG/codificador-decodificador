@@ -6,9 +6,8 @@ function guardaVariaveis () {
   radioBtn2 = document.getElementById("decod"); // Seleciona o radio btn de decodificar
   botao = document.getElementById("botao-executar"); // Seleciona o botao de executar
   inputTexto = document.getElementById('inserir-texto-textarea');  
-  incremento = document.getElementById("incremento"); // Seleciona o campo de input dentro da div oculta 
+  // Seleciona o campo de input dentro da div oculta 
   inputResultado = document.getElementById('resultado-textarea');
-  
 }
 
 // Exibe ou esconde o input de incremento da Cifra de Cesar
@@ -47,9 +46,10 @@ botao.addEventListener('click', function(event) {
 
 function cifraDeCesar() { 
   textoParaArray = Array.from(inputTexto.value.toUpperCase()); // Transforma o conteúdo da variável em um array 
-  valorIncremento = parseInt(incremento.value); // Transforma o número digitado em um variável number, pois é recebido primeiramente como string
+  incremento = document.getElementById("incremento").value; 
+  valorIncremento = parseInt(incremento); // Transforma o número digitado em um variável number, pois é recebido primeiramente como string
   
-  if (escolha.text == "Cifra de César" && botao.innerText == 'Codificar Mensagem!') {
+  if (botao.innerText == 'Codificar Mensagem!') {
 
     inputResultado.value = '';
     
@@ -66,7 +66,7 @@ function cifraDeCesar() {
 
       i++;
     } 
-  } else if (escolha.text == "Cifra de César" && botao.innerText == 'Decodificar Mensagem!') {
+  } else if (botao.innerText == 'Decodificar Mensagem!') {
 
     inputResultado.value = '';
 
@@ -93,12 +93,14 @@ function cifraDeCesar() {
   console.log(String.fromCharCode(codCifra));
   console.log(decodCifra);
   console.log(String.fromCharCode(decodCifra));
+  console.log(escolha.text)
+  console.log(escolha.value)
   console.log('-------FIM Teste de variável-------')    
 }
 
 function base64() {
   
-  if (escolha.text == 'Base64' && botao.innerText == 'Codificar Mensagem!') {
+  if (botao.innerText == 'Codificar Mensagem!') {
 
     var codBase64 = btoa(inputTexto.value);    
     
@@ -114,14 +116,25 @@ function base64() {
 }
 
 // Função que será executada ao clicar no botão executar. Selecionada uma das duas opções, apenas a função interna correspondente terá efeito
-function executar() {
-  if (escolha.text == 'Cifra de César') {
-    cifraDeCesar();
-  } else {
-    base64();
-  }
-}
 
+botao.addEventListener('click', function() {
+  if (escolha.value === 'Base64') {
+    base64();
+  } else {
+    cifraDeCesar()
+  }
+})
+
+
+/*function executar() {
+  if (escolha.text == 'Base64') {
+    base64();
+    
+  } else if (escolha.text == 'Cifra de César') {
+    cifraDeCesar();
+    
+  }
+}*/
 
 // Função criaInput no formato orientado a objetos 
 /*var criaInput = {
